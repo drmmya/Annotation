@@ -47,7 +47,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.yeasin989" // <-- Your GitHub username
                 artifactId = "material"          // <-- Your library repo/module name
-                version = "1.0.0"                // <-- Version/tag
+                version = "1.0.4"                // <-- Version/tag
             }
         }
     }
