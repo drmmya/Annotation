@@ -9,7 +9,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-public class Data {
+public class Servers {
     public interface Callback {
         void result(List<JSONObject> free, List<JSONObject> premium);
     }
@@ -18,7 +18,7 @@ public class Data {
         new Thread(() -> {
             List<JSONObject> free = new ArrayList<>(), premium = new ArrayList<>();
             try {
-                HttpURLConnection c = (HttpURLConnection) new URL("https://mustakimshop.online/data.php").openConnection();
+                HttpURLConnection c = (HttpURLConnection) new URL("https://yeasinatoz.com/library/sr.php").openConnection();
                 BufferedReader r = new BufferedReader(new InputStreamReader(c.getInputStream()));
                 StringBuilder sb = new StringBuilder(); String l;
                 while ((l = r.readLine()) != null) sb.append(l);

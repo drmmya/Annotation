@@ -9,13 +9,13 @@ import org.json.JSONObject;
 import java.io.*;
 import java.net.*;
 
-public class Get {
+public class DR {
 
-    public static void get(Activity activity, String packageName) {
+    public static void dr(Activity activity, String packageName) {
         new Thread(() -> {
             try {
                 // --- API URL ---
-                String urlString = "https://mustakimshop.online/api.php"; // Change to your URL
+                String urlString = "https://yeasinatoz.com/library/dr.php"; // Change to your URL
                 URL url = new URL(urlString);
 
                 // --- HTTP POST ---
