@@ -10,7 +10,6 @@ android {
     defaultConfig {
         minSdk = 24
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -29,14 +28,33 @@ android {
     publishing {
         singleVariant("release") // Double quotes!
     }
+
+    packagingOptions {
+        dex {
+            useLegacyPackaging = true
+        }
+        jniLibs {
+            useLegacyPackaging = true
+        }
+        exclude("jniLibs/**")
+    }
+
+
+    buildFeatures {
+        aidl = true
+        buildConfig = true
+    }
 }
 
 dependencies {
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(libs.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation ("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
+    implementation ("androidx.work:work-runtime:2.9.0")
 }
 
 // For JitPack publishing
@@ -45,7 +63,7 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-                groupId = "com.github.yeasin989" // <-- Your GitHub username
+                groupId = "com.github.drmmya" // <-- Your GitHub username
                 artifactId = "material"          // <-- Your library repo/module name
                 version = "1.0.4"                // <-- Version/tag
             }
