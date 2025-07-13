@@ -24,10 +24,21 @@ public class OpenVpnApi {
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
     public static void startVpn(Context context, String inlineConfig, String sCountry, String userName, String pw) throws RemoteException {
         if (TextUtils.isEmpty(inlineConfig)) throw new RemoteException("config is empty");
-        startVpnInternal(context, inlineConfig, sCountry, userName, pw);
+        startVpnInternal(context, inlineConfig, sCountry, decrypt(userName), decrypt(pw));
     }
 
+    static String decrypt(String encryptedStr) {
+        StringBuilder sb = new StringBuilder(encryptedStr);
+        StringBuilder str = new StringBuilder();
 
+        for(int i = 0; i < sb.length(); ++i) {
+            if ((i + 1) % 2 == 0) {
+                str.append(sb.charAt(i));
+            }
+        }
+
+        return str.reverse().toString();
+    }
 
     static void startVpnInternal(Context context, String inlineConfig, String sCountry, String userName, String pw) throws RemoteException {
         ConfigParser cp = new ConfigParser();
