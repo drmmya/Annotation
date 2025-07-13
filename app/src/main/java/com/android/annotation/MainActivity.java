@@ -11,9 +11,6 @@ import de.blinkt.openvpn.core.OpenVPNThread;
 public class MainActivity extends AppCompatActivity {
 
 
-    OpenVPNThread vpnThread = new OpenVPNThread();
-    OpenVPNService vpnService = new OpenVPNService();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
