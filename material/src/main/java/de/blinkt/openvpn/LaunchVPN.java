@@ -103,7 +103,7 @@ public class LaunchVPN extends Activity {
                 onActivityResult(START_VPN_PROFILE, Activity.RESULT_OK, null);
 
             } catch (RemoteException e) {
-                Utils.getErrors(e);
+
             }
 
             unbindService(this);
