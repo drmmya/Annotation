@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.ludoclassic.R;
+import com.srtech.ludoclassic.R;
 
 public class MainActivity extends AppCompatActivity {
     @Override
