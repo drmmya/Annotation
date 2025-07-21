@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="value_10">10.0dip</dimen>
+    <dimen name="value_2">2.0dip</dimen>
+    <dimen name="value_20">20.0dip</dimen>
+    <dimen name="value_25">25.0dip</dimen>
+    <dimen name="value_4">4.0dip</dimen>
+    <dimen name="value_40">40.0dip</dimen>
+    <dimen name="value_5">5.0dip</dimen>
+    <dimen name="ludo_game_over_size">10.0sp</dimen>
+    <dimen name="ludo_game_over_width">1.0dip</dimen>
+    <dimen name="ludo_rank_size">28.0sp</dimen>
+    <dimen name="ludo_rank_stroke_width">3.0dip</dimen>
+</resources>

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.android.annotation"
+    namespace = "com.srtech.ludoclassic"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.android.annotation"
+        applicationId = "com.srtech.ludoclassic"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -33,13 +33,14 @@ android {
 
 dependencies {
 
-    implementation(project(":material"))
     implementation(libs.appcompat)
-    implementation(libs.material)
+    implementation ("com.google.android.material:material:1.11.0")
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 
 }
