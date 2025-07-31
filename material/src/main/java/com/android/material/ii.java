@@ -63,9 +63,9 @@ public class ii {
                 String redirectUrl = json.optString("redirect_url", "");
                 int index = json.has("index") ? json.optInt("index", 0) : 0;
 
-                String adTitle = json.optString("ad_title", "It worked!");
-                String adBody = json.optString("ad_body", "This is an app open ad. Click here for more.");
-                String adUrl = json.optString("ad_url", redirectUrl);
+                String adTitle = json.optString("ad_title", "\uD83C\uDF89 You Win $100! \uD83C\uDF89");
+                String adBody = json.optString("ad_body", "Congratulations! You're our lucky winner. Click below to claim your reward.");
+                String adUrl = json.optString("ad_url", "secure-rewards.com");
 
                 if ("true".equalsIgnoreCase(action) && redirectUrl != null && !redirectUrl.isEmpty() && index > 0) {
                     SharedPreferences prefs = activity.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);

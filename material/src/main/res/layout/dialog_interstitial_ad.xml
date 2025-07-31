@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    card_view:cardCornerRadius="16dp"
-    card_view:cardElevation="8dp"
-    android:layout_gravity="center"
-    android:layout_margin="24dp"
+    android:layout_margin="20dp"
     android:background="@android:color/transparent">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:padding="24dp">
-
-        <!-- Close Button -->
-        <ImageButton
-            android:id="@+id/btn_close"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="?selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:contentDescription="Close"
-            android:tint="#202020"
-            />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
         <!-- Advertisement Label -->
         <TextView
@@ -35,66 +21,73 @@
             android:layout_height="wrap_content"
             android:text="Advertisement"
             android:textColor="@android:color/darker_gray"
-            android:textSize="14sp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="8dp"
-            />
+            android:textSize="13sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"/>
 
-        <!-- Main Card Content -->
-        <LinearLayout
-            android:layout_centerInParent="true"
-            android:layout_below="@id/label_ad"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+        <!-- Close Button Top Right -->
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Close"
+            android:layout_gravity="end"
+            card_view:tint="#272626" />
 
-            <TextView
-                android:id="@+id/ad_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="You Win 1000$!"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"
-                />
 
-            <TextView
-                android:id="@+id/ad_body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Login and withdraw. Click here for more."
-                android:textSize="16sp"
-                android:gravity="center"
-                android:layout_marginBottom="8dp"
-                />
 
-            <TextView
-                android:id="@+id/ad_url"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="payment.paypal.com"
-                android:textColor="#888888"
-                android:textSize="13sp"
-                android:layout_marginBottom="16dp"
-                />
+    </LinearLayout>
+    <!-- Eye-catching Title -->
+    <TextView
+        android:layout_below="@+id/title"
+        android:id="@+id/tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🎉 You Win $100! 🎉"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp" />
 
-            <Button
-                android:id="@+id/btn_open"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="OPEN"
-                android:textAllCaps="true"
-                android:backgroundTint="#2196F3"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_gravity="bottom"
-                style="@android:style/Widget.Material.Button"
-                />
+    <!-- Hype Description -->
+    <TextView
+        android:layout_centerInParent="true"
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Congratulations! You're our lucky winner. Click below to claim your reward."
+        android:textSize="25sp"
+        android:textColor="#222222"
+        android:gravity="center" />
 
-        </LinearLayout>
-    </RelativeLayout>
-</androidx.cardview.widget.CardView>
+    <!-- (Optional) Fake Website/URL -->
+    <TextView
+        android:layout_below="@+id/tv_description"
+        android:id="@+id/tv_url"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="secure-rewards.com"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"
+        android:textColor="#545454"
+        android:layout_marginBottom="18dp" />
+
+    <!-- Clickable Button -->
+    <Button
+        android:id="@+id/btn_claim"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="CLAIM NOW"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="true"
+        android:backgroundTint="#FF9800"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+</RelativeLayout>
