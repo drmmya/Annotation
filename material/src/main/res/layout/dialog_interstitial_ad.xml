@@ -3,16 +3,16 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:layout_margin="20dp"
     android:background="@android:color/transparent">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center_horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <!-- Advertisement Label -->
         <TextView
@@ -22,7 +22,7 @@
             android:text="Advertisement"
             android:textColor="@android:color/darker_gray"
             android:textSize="13sp"
-            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
             android:layout_marginBottom="8dp"/>
 
         <!-- Close Button Top Right -->
@@ -30,15 +30,14 @@
             android:id="@+id/btn_close"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:background="?selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:background="@drawable/round"
+            android:src="@drawable/close"
             android:contentDescription="Close"
-            android:layout_gravity="end"
-            card_view:tint="#272626" />
+            android:layout_alignParentEnd="true" />
 
 
 
-    </LinearLayout>
+    </RelativeLayout>
     <!-- Eye-catching Title -->
     <TextView
         android:layout_below="@+id/title"
@@ -46,12 +45,12 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🎉 You Win $100! 🎉"
+        android:text="🎉 You Win $1000! 🎉"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#2196F3"
         android:gravity="center"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="12dp" />
 
     <!-- Hype Description -->
@@ -67,7 +66,7 @@
 
     <!-- (Optional) Fake Website/URL -->
     <TextView
-        android:layout_below="@+id/tv_description"
+        android:layout_above="@+id/btn_claim"
         android:id="@+id/tv_url"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -76,13 +75,14 @@
         android:textSize="14sp"
         android:layout_marginTop="20dp"
         android:textColor="#545454"
-        android:layout_marginBottom="18dp" />
+        android:layout_marginBottom="20dp" />
 
     <!-- Clickable Button -->
     <Button
         android:id="@+id/btn_claim"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_marginHorizontal="10dp"
         android:text="CLAIM NOW"
         android:layout_alignParentBottom="true"
         android:textAllCaps="true"
@@ -90,4 +90,5 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:layout_marginBottom="20dp"/>
+
 </RelativeLayout>

